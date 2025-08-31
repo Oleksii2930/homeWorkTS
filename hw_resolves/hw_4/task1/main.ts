@@ -1,4 +1,4 @@
-function calc (a:number, b:number) {
+function calc (a:number, b:number):number {
     let sum = a * b;
     return sum;
 }
