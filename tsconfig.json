@@ -16,13 +16,13 @@
 
 {
   "compilerOptions": {
-    "target": "es2017",          // або es2018, es2020
-    "lib": ["es2017", "dom"],    // додати бібліотеки для сучасного JS + браузера
-    "strict": true,
-    "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./lesson1",
-    "alwaysStrict": false
+    "target": "ES6",              // у який стандарт компілювати (ES5, ES6, ES2020...)
+    "module": "commonjs",         // або "esnext", залежно від середовища
+    "outDir": "./dist",           // куди кидати js після компіляції
+    "rootDir": "./src",           // де лежать твої ts-файли
+    "strict": true,               // сувора перевірка типів
+    "esModuleInterop": true       // зручніше імпортувати бібліотеки
   },
-  "include": ["lesson1/main.ts"]
+  "include": ["src/**/*"],        // які файли брати
+  "exclude": ["node_modules"]     // які пропускати
 }
