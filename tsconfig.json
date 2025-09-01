@@ -16,11 +16,12 @@
 
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "es2017",          // або es2018, es2020
+    "lib": ["es2017", "dom"],    // додати бібліотеки для сучасного JS + браузера
+    "strict": true,
     "module": "commonjs",
     "outDir": "./dist",
     "rootDir": "./lesson1",
-    "strict": false,
     "alwaysStrict": false
   },
   "include": ["lesson1/main.ts"]
