@@ -1,6 +1,8 @@
-interface Array<T> {
-    myFilter(callbak: (value: T) => boolean): T[];
-}
+
+    interface Array<T> {
+        myFilter(callbak: (value: T) => boolean): T[];
+    }
+
 Array.prototype.myFilter = function <T> (predicate:(value:T) => boolean):T[]  {
 const arr = [];
     for (const item of this) {
