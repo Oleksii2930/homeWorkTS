@@ -1,15 +1,42 @@
 // – Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript,
 // зробіть так, щоб при натисканні на кнопку зникав елемент з id=”text”.
 
-const buttons:HTMLCollectionOf<HTMLButtonElement> = document.getElementsByTagName('button');
-const button:HTMLButtonElement | undefined = buttons[0];
+// const buttons:HTMLCollectionOf<HTMLButtonElement> = document.getElementsByTagName('button');
+// const button:HTMLButtonElement | undefined = buttons[0];
+//
+// if (button ) {
+//     button.onclick = function () {
+//         const textE1 = document.getElementById('text');
+//         // document.getElementById('text').style.display = 'none';
+//         if (textE1){
+//             textE1.remove();
+//         }
+//     }
+// }
 
-if (button ) {
+
+// #sH8c4er
+// - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
+
+// const button = document.getElementById('btn');
+
+const buttons: HTMLCollectionOf<HTMLButtonElement> = document.getElementsByTagName('button');
+const button: HTMLButtonElement | null = buttons[0] || null;
+
+if (button) {
+    // Обробник onclick
     button.onclick = function () {
-        const textE1 = document.getElementById('text');
-        // document.getElementById('text').style.display = 'none';
-        if (textE1){
-            textE1.remove();
+        const div = document.getElementById('text') as HTMLDivElement | null;
+        if (div) {
+            div.style.display = 'none';
         }
-    }
+    };
+
+    // Додатковий обробник через addEventListener
+    button.addEventListener('click', () => {
+        const div = document.getElementById('text') as HTMLDivElement | null;
+        if (div) {
+            div.style.display = 'none';
+        }
+    });
 }

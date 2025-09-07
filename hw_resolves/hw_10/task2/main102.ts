@@ -1,21 +1,26 @@
-// const checkBtn = document.getElementById('checkBtn') as HTMLButtonElement;
-// const ageInput = document.getElementById('ageInput') as HTMLInputElement;
-// //ts-ignore
-// const result = document.getElementById('result') as HTMLDivElement;
-//
-// checkBtn.onclick = function () {
-//     const age:number = parseInt(ageInput.value);
-// //ts-ignore
-//     if (isNaN(age)) {
-//         result.innerText = "Будь ласка, введіть число!";
-//         result.style.color = 'orange';
-//     }
-//     else if (age < 18) {
-//         result.innerText = 'Вам менше 18 років ❌';
-//         result.style.color = 'red';
-//     }
-//     else {
-//         result.innerText = 'Доступ дозволено ✅';
-//         result.style.color = 'green';
-//     }
-// };
+// Стоврити форму з трьома полями для name,sruname,age та кнопкою. При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+
+
+
+const someForm = document.forms.namedItem('someForm') as HTMLFormElement;
+//@ts-ignore
+const target = document.getElementById('target') as HTMLDivElement;
+
+someForm.addEventListener('submit', (e: Event) => {
+    e.preventDefault();
+
+    // отримуємо значення з полів форми
+    const nameInput = someForm.elements.namedItem('name') as HTMLInputElement;
+    const surnameInput = someForm.elements.namedItem('surname') as HTMLInputElement;
+    const ageInput = someForm.elements.namedItem('age') as HTMLInputElement;
+
+    const nameValue: string = nameInput.value;
+    const surnameValue: string = surnameInput.value;
+    const ageValue: number = parseInt(ageInput.value);
+
+    const obj = { nameValue, surnameValue, ageValue };
+    console.log(obj);
+
+    // вивід у div
+    target.innerText = `${obj.nameValue} ${obj.surnameValue} ${obj.ageValue}`;
+});
